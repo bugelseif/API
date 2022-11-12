@@ -1,12 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Pagina inicial</h1>
-</body>
-</html>
+{% extends 'base.html' %}
+{% block content %}
+        <div id="sobre-nos">
+			<fieldset class="linha">
+					<p> <em style="padding: 0px 15px; font-size: 30px;">SOBRE NÓS</em></p> <!-- tag em, para deixar em intálico -->
+			</fieldset>  <!-- é a linha -->  
+
+			<p class="sobre">
+                Bem vindo ao site! <br>
+				Sistema desenvolvido  <br> <!-- tag br, para quebra de linha -->
+                para monitorar <br>
+                a previsão do tempo. <br>
+                IFSC Câmpus Lages. <br>
+			</p>
+		</div> 
+
+        <footer class="rodape">
+            <p class="direitos">
+                 &copy; Todos os direitos reservados  
+            </p>
+        </footer>
+{% endblock %}

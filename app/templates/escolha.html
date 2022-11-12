@@ -1,10 +1,38 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
+{% block content %} 
+ <div class="header-1">
+                <div >
+                    <img src="API\app\images\logo.jpg" 
+                    >
+                </div>
+            </div>
 
-{% block content %}
-    <h1>Escolha cidade</h1>
-    <form action="" method="POST">
-        {{ form.hidden_tag() }}
-        {{ form.cidade }}
-        <p>{{ form.submit() }}</p>
-    </form>
-{% endblock %}
+            <div id="sobre-nos">
+                <fieldset >
+                        <h2> <em>Previsão do Tempo</em></h2> <!-- tag em, para deixar em intálico -->
+               
+
+                <h3>Escolha cidade</h3>
+                <form action="" method="POST">
+                    {{ form.hidden_tag() }}
+                    {{ form.cidade }}
+                    <p>{{ form.submit() }}</p>
+                </form>
+            </fieldset>  <!-- é a linha -->  
+                <p class="sobre">
+                    Nesta página  os dados <br> <!-- tag br, para quebra de linha -->
+                    serão consumidos localmente. <br>
+                </p>
+  
+        
+               
+               
+                   
+             
+       
+            </div>
+          
+
+		</div> 
+ 
+{% endblock  %}

@@ -45,3 +45,7 @@ def nomes():
     return jsonify({
         'resultado': filtrar_nome
     })
+
+@app.route('/externa', methods=['GET','POST'])
+def externa():
+    return render_template('externa.html') 
