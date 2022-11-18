@@ -6,6 +6,7 @@ from app.process.ibge import ajusta_dados, busca
 from app.process.tempo import previsao
 
 
+
 @app.route('/')
 @app.route('/index')
 def index():                
@@ -49,4 +50,7 @@ def nomes():
 
 @app.route('/externa', methods=['GET','POST'])
 def externa():
-    return render_template('externa.html') 
+    dados=busca()
+    # nomes=ajusta_dados(dados)
+    return render_template('api_externa.html',dados= dados )
+   
