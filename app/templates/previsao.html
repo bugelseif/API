@@ -2,33 +2,20 @@
 
 {% block content %}
 <div class="resultado-previsao">
-    <h3>{{ previsao_infos.cidade }}</h3>
+    <h3>{{previsao_infos[0].cidade}} </h3>
+   
     <div class="cards">
-            <div class="card">
-                <p>{{ previsao_infos.clima }}</p>
-                <p>{{ previsao_infos.temperatura }}°C</p>
-                <p>{{ previsao_infos.umidade }}%</p>
+       
+        {%for i in previsao_infos%}
+    
+         <div class="card">
+                <p>{{ i.data[0] }}/{{i.data[1]}}</p>
+                <p>{{ i.clima }}</p>
+                <p>{{ i.temperatura }}°C</p>
+                <p>{{ i.umidade }}%</p>
             </div>
-            <div class="card">
-                <p>{{ previsao_infos.clima }}</p>
-                <p>{{ previsao_infos.temperatura }}°C</p>
-                <p>{{ previsao_infos.umidade }}%</p>
-            </div>
-            <div class="card">
-                <p>{{ previsao_infos.clima }}</p>
-                <p>{{ previsao_infos.temperatura }}°C</p>
-                <p>{{ previsao_infos.umidade }}%</p>
-            </div>
-            <div class="card">
-                <p>{{ previsao_infos.clima }}</p>
-                <p>{{ previsao_infos.temperatura }}°C</p>
-                <p>{{ previsao_infos.umidade }}%</p>
-            </div>
-            <div class="card">
-                <p>{{ previsao_infos.clima }}</p>
-                <p>{{ previsao_infos.temperatura }}°C</p>
-                <p>{{ previsao_infos.umidade }}%</p>
-            </div>
+            {%endfor%}
+           
         </div>
     </div>
 {% endblock %}
