@@ -1,22 +1,23 @@
 {% extends 'base.html' %}
 {% block content %}
         <div id="sobre-nos">
-			<fieldset class="linha">
-					<p> <em style="padding: 0px 15px; font-size: 30px;">SOBRE NÓS</em></p> <!-- tag em, para deixar em intálico -->
-			</fieldset>  <!-- é a linha -->  
 
-			<p class="sobre">
+			<p class="sobre">       
+                <em> SOBRE NÓS  </em> <br>    
                 Bem vindo ao site! <br>
 				Sistema desenvolvido  <br> <!-- tag br, para quebra de linha -->
                 para monitorar <br>
                 a previsão do tempo. <br>
                 IFSC Câmpus Lages. <br>
 			</p>
-		</div> 
+		</div>
 
+        <fieldset class="linha"></fieldset>  <!-- é a linha -->  
+        
         <footer class="rodape">
             <p class="direitos">
                  &copy; Todos os direitos reservados  
             </p>
         </footer>
+        
 {% endblock %}
