@@ -42,14 +42,12 @@
                         position: sticky; /* Menu fixo */
                         top: 0; 
                         z-index: 1;
-                                        
                     }
                     a.nav-item.nav-link {
                         font-style: italic;
                         font-size: 22px;
                         font-weight: bold;   /*deixar em negrito*/
                         text-align: center; /* Menu centralizado */   
-                    
                     }
 
                     dl, ol, ul {
@@ -108,6 +106,23 @@
                         text-align: center;
                         padding: 18px 0;
                         padding-top: 50px;
+                    }
+
+                    .cards {
+                        display: grid;
+                        grid-template-columns: repeat(5, 1fr);
+                        grid-template-rows: 1fr;
+                        grid-column-gap: 3px;
+                        grid-row-gap: 0px;
+                    }
+
+                    .resultado-previsao{
+                        text-align: center;
+                    }
+                    .card{
+                        background-color: #006400;
+                        padding: 1%;
+                        margin: 1%;
                     }
                     
             </style>

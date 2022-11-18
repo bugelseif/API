@@ -17,13 +17,14 @@ def escolha():
     if form.validate_on_submit():
         flash(f'{form.cidade.data}')
         cidade = form.cidade.data
-        return render_template('previsao.html', cidade=cidade)
+        previsao_infos = previsao(cidade)
+        return render_template('previsao.html', previsao_infos=previsao_infos)
     return render_template('escolha.html', form=form)
 
-@app.route('/previsao')
-def previsao():
-    cidade = 'lages'
-    return render_template('previsao.html', cidade=cidade)
+# @app.route('/previsao')
+# def previsao():
+#     cidade = 'lages'
+#     return render_template('previsao.html', cidade=cidade)
 
 @app.route('/tempo/<cidade>', methods = ['GET'])
 def tempo(cidade):                
