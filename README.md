@@ -21,4 +21,4 @@ As bibliotecas externas estão listadas em requirements.txt, para instalar use o
 
 Após inicialise o servidor com o comando:
 
-* flask run
+* flask run --host=xxx.xxx.xxx.xxx(IP)
