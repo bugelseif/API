@@ -13,3 +13,7 @@ class EscolhaCidade(FlaskForm):
     cidade = SelectField(u'cidade', choices=choices)
     submit = SubmitField('Sign In')
 
+class EscolhaCoordenadas(FlaskForm):
+    longitude = StringField(u'longitude')
+    latitude = StringField(u'latitude')
+    submit = SubmitField('Acessar')

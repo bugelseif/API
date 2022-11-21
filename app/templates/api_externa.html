@@ -4,8 +4,13 @@
         <div class="Api Externa">
             <div id="sobre-nos"> 
              <div class="dados">
-
-        {{dados}}   
+             
+        {{coordenadas}}   
+        <p> Localização: {{ coordenadas.name}}</p>
+        <p> Longitude: {{ coordenadas.coord.lon}}</p>
+        <p> Latitude: {{ coordenadas.coord.lat}}</p>
+        <p> Temperatura: {{ coordenadas.main.temp-273.15}} °C </p>
+        
         </div> 
 {% endblock %}
 
