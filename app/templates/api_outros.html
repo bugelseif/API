@@ -2,13 +2,15 @@
 {% block content %}
         <div class="header-1">
             <div id="sobre-nos">
-                
-            <p class="sobre">
-                Nesta página o sistema <br> <!-- tag br, para quebra de linha -->
-                irá consumir uma Api <br>
-                de terceiros. <br>
-            </p>
-            
+                <h2>Materiais do Campus </h2>
             </div> 
+            <div class="material">
+                {%for i in dados%}
+                    <p>Nome: {{ i.nome }}</p>
+                    <p>Tipo: {{ i.tipo }}</p>
+                    <p>Quantidade Total: {{ i.quantidadeTotal }}</p>
+                    <p>Quantidade Disponivel: {{ i.quantidadeDisponivel }}</p>
+                {%endfor%}
+            </div>
         </div> 
 {% endblock %}

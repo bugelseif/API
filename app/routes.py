@@ -4,6 +4,7 @@ from app import app
 from app.forms import EscolhaCidade,EscolhaCoordenadas
 from app.process.openWearther import busca
 from app.process.tempo import previsao
+from app.process.equipamento import equipamento
 
 
 ## def index vai carregar uma pagina html
@@ -30,37 +31,17 @@ def externa():
         coordenadas =  busca(latitude,longitude)
       
         return render_template('api_externa.html',coordenadas=coordenadas) 
-    return render_template('coordenadas.html', form=form) #caso o form nao seja valido permanece na pa
+    return render_template('coordenadas.html', form=form)
+
+@app.route('/outros', methods=['GET','POST'])
+def outros(): #vai carregar os dados da api_externa 
+    dados = equipamento()
+    return render_template('api_outros.html', dados=dados) #renderizar a pagina 
 
 
-# @app.route('/previsao')
-# def previsao():
-#     cidade = 'lages'
-#     return render_template('previsao.html', cidade=cidade)
-
-# @app.route('/tempo/<cidade>', methods = ['GET'])
-# def tempo(cidade):                
-#     resultado = previsao(cidade)
-#     if resultado == None:
-#         return 'Cidade incorreta'
-#     return jsonify({
-#         'cidade': resultado['cidade'],
-#         'clima': resultado['clima'],
-#         'temperatura' : resultado['temperatura'],
-#         'umidade' : resultado['umidade']
-#         })
-
-# @app.route('/nomes')
-# def nomes():              
-#     dados = busca()
-#     filtrar_nome = ajusta_dados(dados)
-
-#     return jsonify({
-#         'resultado': filtrar_nome
-#     })
-
-# @app.route('/externa', methods=['GET','POST'])
-# def externa(): #vai carregar os dados da api_externa 
-#     dados=busca() #vai chamar no openWearther.py que vai consumir os dados 
-#     return render_template('api_externa.html',dados= dados ) #renderizar a pagina 
-   
+@app.route('/tempo/<cidade>', methods = ['GET'])
+def tempo(cidade):                
+    resultado = previsao(cidade)
+    if resultado == None:
+        return 'Cidade incorreta'
+    return jsonify(resultado)

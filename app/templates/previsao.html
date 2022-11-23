@@ -3,11 +3,8 @@
 {% block content %}
 <div class="resultado-previsao">
     <h3 class="ajuste">{{previsao_infos[0].cidade}} </h3>
-   
     <div class="cards">
-       
         {%for i in previsao_infos%}
-    
          <div class="card">
                 <p>{{ i.data[0] }}/{{i.data[1]}}</p>
                 <p>{{ i.clima }}</p>
@@ -15,9 +12,6 @@
                 <p>{{ i.umidade }}%</p>
             </div>
             {%endfor%}
-           
         </div>
     </div>
 {% endblock %}
-
-{% comment %}  {% endcomment %}
