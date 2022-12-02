@@ -1,24 +1,19 @@
 {% extends 'base.html' %}
-{% block content %} 
-       
-        <div class="header-1">          
-            <div id="sobre-nos">
-           
-                <h2><em>Coordenadas</em></h2> <!-- tag em, para deixar em intálico -->                
-                        <p class="texto2">
-                            Escolha as coordenadas <br> <!-- tag br, para quebra de linha -->
-                             <br>
-                        </p>
-                <h3>Escolha</h3>
+{% block content %}
 
-                <form action="" method="POST">
-                    {{ form.hidden_tag() }}
-                   <p> latitude {{ form.latitude }} </p>
-                   <p> longitude {{ form.longitude }} </p>
-                    <p>{{ form.submit() }}</p>
-                </form>
-     
-            </div>         
-		</div> 
- 
-{% endblock  %}
+<div class="header-1">
+    <div id="sobre-nos">
+
+        <h2><em>CEP</em></h2> <!-- tag em, para deixar em intálico -->
+        <p class="texto2">
+            Digite seu CEP <br> <!-- tag br, para quebra de linha -->
+            <br>
+        </p>
+        <input type="text" id="cep" name="cep" size="15" maxlength="8" autocomplete="off">
+        <button type="button" onclick="buscaDadosCEP()">Consultar</button>
+        <hr class="my-4">
+        <div style="padding: top 20px;" id="return"></div>
+
+    </div>
+</div>
+{% endblock %}
