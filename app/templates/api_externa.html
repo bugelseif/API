@@ -1,16 +1,25 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="header-1">
-        <div id="sobre-nos">
-            <h2>Open Weather </h2>
-        </div> 
-        <div class="material">
-            <p> Localização: {{ coordenadas.name}}</p>
-            <p> Longitude: {{ coordenadas.coord.lon}}</p>
-            <p> Latitude: {{ coordenadas.coord.lat}}</p>
-            <p> Temperatura: {{ coordenadas.main.temp-273.15}} °C </p>
-        </div>
-    </div> 
+    <div id="sobre-nos">
+        <h2>Correios</h2>
+    </div>
+    <!-- <div class="material">
+        <p> Localização: {{ coordenadas.name}}</p>
+        <p> Longitude: {{ coordenadas.coord.lon}}</p>
+        <p> Latitude: {{ coordenadas.coord.lat}}</p>
+        <p> Temperatura: {{ coordenadas.main.temp-273.15}} °C </p>
+    </div> -->
+
+
+
+    <div class="material">
+        <h1>Digite seu CEP</h1>
+        <input type="text" id="cep" name="cep" size="15" maxlength="8" autocomplete="off">
+        cep: {{cep}}
+        <!-- <button type="button" onclick="buscaDadosCEP()">Consultar</button> -->
+        <hr class="my-4">
+    </div>
+    <div style="padding: top 20px;" id="return"></div>
+</div>
 {% endblock %}
-
-

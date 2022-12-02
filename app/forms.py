@@ -14,6 +14,5 @@ class EscolhaCidade(FlaskForm):
     submit = SubmitField('Sign In')
 
 class EscolhaCoordenadas(FlaskForm):
-    longitude = StringField(u'longitude')
-    latitude = StringField(u'latitude')
-    submit = SubmitField('Acessar')
+    cep = StringField(u'cep')
+    submit = SubmitField('Pesquisar')

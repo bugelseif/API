@@ -26,11 +26,11 @@ def escolha():
 def externa():
     form = EscolhaCoordenadas() #pega as informaçoes do arquivo forms.py e retorna a cidade escolhida
     if form.validate_on_submit():#verifica se tem informaçoes no formulario
-        latitude = form.latitude.data
-        longitude = form.longitude.data
-        coordenadas =  busca(latitude,longitude)
+        cep = form.cep.data
+        # longitude = form.longitude.data
+        cep =  busca(cep)
       
-        return render_template('api_externa.html',coordenadas=coordenadas) 
+        return render_template('api_externa.html',cep=cep) 
     return render_template('coordenadas.html', form=form)
 
 @app.route('/outros', methods=['GET','POST'])
